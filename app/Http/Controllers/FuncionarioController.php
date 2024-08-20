@@ -14,7 +14,7 @@ class FuncionarioController extends Controller
     {
         $funcionarios = funcionario::all();
         dd($funcionarios);
-        dd("Entrou");
+        //dd("Entrou");
     }
 
     /**

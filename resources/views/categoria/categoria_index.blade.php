@@ -12,15 +12,15 @@
                             <th>Nome</th>
                             <th>Ações</th>
                         </tr>
+                        @foreach ($categorias as $value)
                         <tr>
-                            @foreach ($categorias as $value)
 
-                                <td>{{ $value->id }}</td>
-                                <td>{{ $value->nome }}</td>
-                                <td></td>
+                            <td>{{ $value->id }}</td>
+                            <td>{{ $value->nome }}</td>
+                            <td></td>
 
-                            @endforeach
                         </tr>
+                            @endforeach
                     </table>
                 </div>
             </div>

@@ -14,7 +14,6 @@ class CategoriaController extends Controller
     {
         $categorias = Categoria::orderby('nome', 'ASC')->get();
         return view('categoria.categoria_index', compact('categorias'));
-        //dd('entrou');
     }
 
     /**
@@ -22,7 +21,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('categoria.categoria_create');
     }
 
     /**
@@ -30,7 +29,18 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validated = $request->validate([
+            'nome' => 'required|min:5',
+        ]);
+
+        $categoria = New Categoria();
+        $categoria->nome = $request->nome;
+        $categoria->save();
+
+        //dd($request->all());
+
+        return  redirect()->route('categoria.index');
     }
 
     /**
@@ -38,7 +48,9 @@ class CategoriaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //dd('show: ' . $id);
+        $categoria = Categoria::find($id);
+        return view('categoria.categoria_show', compact('categoria'));
     }
 
     /**

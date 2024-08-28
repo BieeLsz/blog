@@ -12,6 +12,17 @@
                     <a href="{{ url('/categoria/create') }}" class="btn btn-success btn-md" role="button" aria-disabled="true">Criar</a>
                 </div>
 
+                @if(session('mensagem'))
+                    <div class="alert alert-success mx-auto">
+                        {{ session('mensagem') }}
+                    </div>
+                @endif
+                @if(session('exclusao'))
+                <div class="alert alert-danger mx-auto">
+                    {{ session('exclusao') }}
+                </div>
+                @endif
+
                     <table>
                         <tr>
                             <th>ID</th>
@@ -25,6 +36,14 @@
                             <td>{{ $value->nome }}</td>
                             <td>
                                 <a href="{{ url('/categoria/' .  $value->id) }}" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Visualizar</a>
+
+                                <a href="{{ url('/categoria/' .  $value->id) . "/edit" }}" class="btn btn-warning btn-sm" role="button" aria-disabled="true">Editar</a>
+
+                                <form method="POST" action="{{url('/categoria/' . $value->id)}}">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input class="btn btn-danger btn-sm" role="button" type="submit" value="Excluir">
+                                </form>
                             </td>
 
                         </tr>

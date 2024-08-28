@@ -36,9 +36,13 @@
                             <td>{{ $value->nome }}</td>
                             <td>
                                 <a href="{{ url('/categoria/' .  $value->id) }}" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Visualizar</a>
+                            </td>
 
+                            <td>
                                 <a href="{{ url('/categoria/' .  $value->id) . "/edit" }}" class="btn btn-warning btn-sm" role="button" aria-disabled="true">Editar</a>
+                            </td>
 
+                            <td>
                                 <form method="POST" action="{{url('/categoria/' . $value->id)}}">
                                     @method('DELETE')
                                     @csrf

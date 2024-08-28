@@ -84,7 +84,7 @@ class CategoriaController extends Controller
         $categoria = Categoria::find($id);
         $categoria->delete();
 
-        return  redirect()->route('categoria.index')->with('exclusao', 'Categoria EXCLUÍDA com sucesso!');
+        return  redirect()->route('categoria.index')->with('exclusao', 'Categoria EXCL UÍDA com sucesso!');
 
     }
 }

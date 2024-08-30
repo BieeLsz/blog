@@ -5,8 +5,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -18,20 +16,21 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ url('/categoria')}}">
+                <form method="POST" action="{{ url('/categoria')}}" class="my-3">
 
                     @csrf
 
-                    <div class="mb-3 mx-2">
+                    <div class="mb-3">
                       <label class="form-label">Nome</label>
                       <input type="text" name="nome" class="form-control" placeholder="Digite o nome da categoria">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-md my-2 mx-2">Enviar</button>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                    </div>
 
                 </form>
 
                 </div>
-            </div>
         </div>
     </div>
 </div>

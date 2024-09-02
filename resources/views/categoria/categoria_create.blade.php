@@ -16,7 +16,9 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ url('/categoria')}}" class="my-3">
+                <a href="{{ url('/categoria') }}" class="btn btn-secondary btn-sm my-4" role="button" aria-disabled="true">Voltar</a>
+
+                <form method="POST" action="{{ url('/categoria')}}" >
 
                     @csrf
 

@@ -30,14 +30,16 @@
                 <table class="table">
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Título</th>
                         <th class="text-center">Ações</th>
                     </tr>
                     @foreach ($postagens as $value)
 
                     <tr>
                         <td>{{ $value->id }}</td>
-                        <td>{{ $value->nome }}</td>
+                        <td>{{ $value->categoria->nome }}</td>
+                        <td>{{ $value->titulo }}</td>
                         <td class="d-flex justify-content-around">
                             <a href="{{ url('/postagem/' .  $value->id) }}" class="btn btn-primary btn-sm" role="button" aria-disabled="true">Visualizar</a>
 

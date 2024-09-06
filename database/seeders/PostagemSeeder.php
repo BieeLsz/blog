@@ -13,20 +13,23 @@ class PostagemSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('funcionarios')->insert([
+        DB::table('postagens')->insert([
             'user_id' => '1',
+            'categoria_id' => '1',
             'titulo' => 'Minha primeira postagem',
             'conteudo' => 'Conteúdo da minha primeira postagem',
     ]);
 
-    DB::table('funcionarios')->insert([
+    DB::table('postagens')->insert([
         'user_id' => '1',
+        'categoria_id' => '2',
         'titulo' => 'Minha segunda postagem',
         'conteudo' => 'Conteúdo da minha segunda postagem',
     ]);
 
-    DB::table('funcionarios')->insert([
+    DB::table('postagens')->insert([
         'user_id' => '1',
+        'categoria_id' => '3',
         'titulo' => 'Minha terceira postagem',
         'conteudo' => 'Conteúdo da minha terceira postagem',
     ]);

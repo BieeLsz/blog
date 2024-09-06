@@ -11,13 +11,19 @@
                     <table class="table">
                         <tr>
                             <th>ID</th>
-                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Título</th>
+                            <th>Conteúdo</th>
+                            <th>Autor</th>
                             <th>Data de Criação</th>
                             <th>Último Update</th>
                         </tr>
                         <tr>
                             <td>{{ $postagem->id }}</td>
-                            <td>{{ $postagem->nome }}</td>
+                            <td>{{ $postagem->categoria->nome }}</td>
+                            <td>{{ $postagem->titulo }}</td>
+                            <td>{{ $postagem->conteudo }}</td>
+                            <td>{{ $postagem->autor->name }}</td>
                             <td>{{ $postagem->created_at }}</td>
                             <td>{{ $postagem->updated_at }}</td>
                         </tr>

@@ -22,7 +22,7 @@
                             <td>{{ $postagem->id }}</td>
                             <td>{{ $postagem->categoria->nome }}</td>
                             <td>{{ $postagem->titulo }}</td>
-                            <td>{{ $postagem->conteudo }}</td>
+                            <td>{!! $postagem->conteudo !!}</td>
                             <td>{{ $postagem->autor->name }}</td>
                             <td>{{ $postagem->created_at }}</td>
                             <td>{{ $postagem->updated_at }}</td>

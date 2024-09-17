@@ -24,7 +24,7 @@
                 <a href="{{ url('/postagem') }}" class="btn btn-secondary btn-sm my-4" role="button" aria-disabled="true">Voltar</a>
 
 
-                <form method="POST" action="{{ url('/postagem/' . $postagem->id )}}">
+                <form method="POST" action="{{ url('/postagem/' . $postagem->id )}}" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
 
@@ -41,6 +41,11 @@
                         @endforeach
 
                     </select>
+
+                    <div class="mb-3">
+                        <label class="form-label">Imagem</label><br>
+                        <input type="file" name="imagem">
+                    </div>
 
                     <div class="mb-3">
                       <label class="form-label">Título</label>

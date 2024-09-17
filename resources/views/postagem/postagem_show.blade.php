@@ -28,6 +28,8 @@
                             <td>{{ $postagem->updated_at }}</td>
                         </tr>
                     </table>
+                    <br>
+                    <p><strong>Imagem:</strong> <img src="data:image/png;base64, {{ $postagem->imagem }} " alt=" {{ $postagem->titulo }} " style="max-width: 500px;"></p>
 
             </div>
         </div>

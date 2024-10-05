@@ -3,13 +3,13 @@
 
 @section('content')
 
-<link rel="stylesheet" href=" {{url('/richtexteditor/rte_theme_default.css')}}" />
-<script type="text/javascript" src="{{url('/richtexteditor/rte.js')}}"></script>
-<script type="text/javascript" src='{{url('/richtexteditor/plugins/all_plugins.js')}}'></script>
+    <link rel="stylesheet" href=" {{ url('/richtexteditor/rte_theme_default.css') }}" />
+    <script type="text/javascript" src="{{ url('/richtexteditor/rte.js') }}"></script>
+    <script type="text/javascript" src='{{ url('/richtexteditor/plugins/all_plugins.js') }}'></script>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
 
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -21,9 +21,10 @@
                     </div>
                 @endif
 
-                <a href="{{ url('/postagem') }}" class="btn btn-secondary btn-sm my-4" role="button" aria-disabled="true">Voltar</a>
+                <a href="{{ url('/postagem') }}" class="btn btn-secondary btn-sm my-4" role="button"
+                    aria-disabled="true">Voltar</a>
 
-                <form method="POST" action="{{ url('/postagem')}}" enctype="multipart/form-data">
+                <form method="POST" action="{{ url('/postagem') }}" enctype="multipart/form-data">
 
                     @csrf
                     <label for="cate">Escolha uma categoria:</label><br>
@@ -40,14 +41,14 @@
                     </div>
 
                     <div class="mb-3">
-                      <label class="form-label">Título</label>
-                      <input type="text" name="titulo" class="form-control" placeholder="Digite o título da postagem">
+                        <label class="form-label">Título</label>
+                        <input type="text" name="titulo" class="form-control" placeholder="Digite o título da postagem">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Conteúdo</label>
                         <textarea id="inp_editor1" name="conteudo" class="form-control" rows="4" col="50"></textarea>
-                      </div>
+                    </div>
 
                     <div class="text-right">
                         <button type="submit" class="btn btn-success">Enviar</button>
@@ -59,8 +60,8 @@
                     var editor1 = new RichTextEditor("#inp_editor1");
                 </script>
 
-                </div>
+            </div>
         </div>
     </div>
-</div>
+    </div>
 @endsection

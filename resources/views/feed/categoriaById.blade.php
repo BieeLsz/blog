@@ -18,7 +18,6 @@
         <span class="image featured"><img src="data:image/png;base64,{{ $value->imagem }}" alt="{{ $value->titulo }}"></span>
         <p>{!! $value->conteudo  !!}</p>
 
-
         <footer>
             <ul class="stats">
                 <li><a href="{{ url('/feed/categoriaById'. $value->id) }}">{{$value->categoria->nome}}</a></li>

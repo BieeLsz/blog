@@ -34,8 +34,6 @@ class PostagemController extends Controller
      */
     public function store(Request $request)
     {
-
-        //dd($request->all());
         $content = file_get_contents($request->file('imagem'));
 
         $validated = $request->validate([
@@ -61,7 +59,6 @@ class PostagemController extends Controller
      */
     public function show(string $id)
     {
-        //dd('show: ' . $id);
         $postagem = Postagem::find($id);
         return view('postagem.postagem_show', compact('postagem'));
     }

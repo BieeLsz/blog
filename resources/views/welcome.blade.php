@@ -2,11 +2,11 @@
 
 @section('content')
 
+@foreach($postagens as $value)
     <!-- Post -->
     <article class="post">
         <header>
 
-            @foreach($postagens as $value)
             <div class="title">
                 <h2><a href="#">{{ $value->titulo }}</a></h2>
             </div>
@@ -26,7 +26,7 @@
                 <li><a href="#" class="icon solid fa-comment">128</a></li>
             </ul>
         </footer>
-        @endforeach
     </article>
+    @endforeach
 
 @endsection

@@ -15,7 +15,8 @@ class PostagemController extends Controller
      */
     public function index()
     {
-        $postagens = Postagem::orderby('titulo', 'ASC')->get();
+        $user_id = Auth::id();
+        $postagens = Postagem::where('user_id', $user_id)->orderby('titulo', 'ASC')->get();
         return view('postagem.postagem_index', compact('postagens'));
     }
 
@@ -68,6 +69,12 @@ class PostagemController extends Controller
      */
     public function edit(string $id)
     {
+        $user_id = Auth::id();
+        $catraca = Postagem::where('id', $id)->where('user_id', $user_id)->exists();
+        if(!$catraca){
+            return  redirect()->route('postagem.index')->with('catraca', 'Você não tem permissão para alterar esta postagem!!!');
+        }
+
         $categorias = Categoria::orderby('nome', 'ASC')->get();
         $postagem = Postagem::find($id);
         return view('postagem.postagem_edit', compact('postagem', 'categorias'));
@@ -78,6 +85,11 @@ class PostagemController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $user_id = Auth::id();
+        $catraca = Postagem::where('id', $id)->where('user_id', $user_id)->exists();
+        if(!$catraca){
+            return  redirect()->route('postagem.index')->with('catraca', 'Você não tem permissão para alterar esta postagem!!!');
+        }
 
         if($request->file('imagem')){
             $content = file_get_contents($request->file('imagem'));

@@ -12,7 +12,7 @@
                     </div>
                 @endif
                 @if (session('exclusao'))
-                    <div class="alert alert-danger mx-auto my-2">
+                    <div class="alert alert-danger mx-auto my-1">
                         {{ session('exclusao') }}
                     </div>
                 @endif
